@@ -10,12 +10,12 @@ def init(PIN,BMODE):
 	print 'GPIO.setup({0},GPIO.OUT)'.format(PIN)
 
 def LED_ON(PIN):
-#	GPIO.out(PIN,GPIO.HIGH)
+#	GPIO.output(PIN,GPIO.HIGH)
 	print "LED ON"
 	time.sleep(.05)
 
 def LED_OFF(PIN):
-#	GPIO.OUT(PIN,GPIO.HIGH)
+#	GPIO.output(PIN,GPIO.HIGH)
 	print "LED OFF"
 	time.sleep(.05)
 
