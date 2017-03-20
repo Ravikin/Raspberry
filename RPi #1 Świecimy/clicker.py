@@ -36,7 +36,7 @@ def main():
 	#	GPIO.cleanup()
 	except KeyboardInterrupt:
 	#	GPIO.cleanup()
-		print "Do widzenia..."
+		print "\nDo widzenia..."
 		sys.exit()
 	
 if __name__ == '__main__':

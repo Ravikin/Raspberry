@@ -1,6 +1,7 @@
 #import RPi.GPIO as GPIO
 import time
 import os
+import sys
 
 def init(PIN,BMODE):
 	#GPIO.setmode(GPIO.BMODE)
@@ -19,21 +20,25 @@ def LED_OFF(PIN):
 	time.sleep(.05)
 
 def main():
-	os.system('clear')
-	BM = raw_input("Podaj uklad GPIO: ")
-	PIN = raw_input("Podaj numer pinu sterujacego: ")
-	print '\n'
-	init(PIN,BM)
-
-	while True:
-		x = raw_input()
-		if x == 'a':
-			LED_ON(PIN)
-		elif x == 'b':
-			LED_OFF(PIN)
-		else:
-			break
-#	GPIO.cleanup()
-
+	try:
+		os.system('clear')
+		BM = raw_input("Podaj uklad GPIO: ")
+		PIN = raw_input("Podaj numer pinu sterujacego: ")
+		print '\n'
+		init(PIN,BM)
+	
+		while True:
+			x = raw_input()
+			if x == 'a':
+				LED_ON(PIN)
+			elif x == 'b':
+				LED_OFF(PIN)
+			else:
+				break
+	#	GPIO.cleanup()
+	except:
+	#	GPIO.cleanup()
+	print "\nDo widzenia..."
+	sys.exit()
 if __name__ == '__main__':
 	main()
