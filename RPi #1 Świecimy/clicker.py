@@ -4,19 +4,19 @@ import os
 import sys
 
 def init(PIN,BMODE):
-	#GPIO.setmode(GPIO.BMODE)
+	GPIO.setmode(GPIO.BMODE)
 	print 'GPIO.setmode(GPIO.{0})'.format(BMODE)
-	#GPIO.setup(PIN, GPIO.OUT)
+	GPIO.setup(PIN, GPIO.OUT)
 	print 'GPIO.setup({0},GPIO.OUT)'.format(PIN)
 
 def LED_ON(PIN):
-#	GPIO.out(PIN,GPIO.HIGH)
-	print "LED ON"
+	GPIO.out(PIN,GPIO.HIGH)
+	print 'LED on {0} ON'.format(PIN)
 	time.sleep(.5)
 
 def LED_OFF(PIN):
-#	GPIO.OUT(PIN,GPIO.HIGH)
-	print "LED OFF"
+	GPIO.OUT(PIN,GPIO.HIGH)
+	print 'LED on {0} OFF'.format(PIN)
 	time.sleep(.5)
 
 def main():
@@ -33,9 +33,9 @@ def main():
 			LED_OFF(PIN)
 			sys.stdin.read(1)
 	
-	#	GPIO.cleanup()
+		GPIO.cleanup()
 	except KeyboardInterrupt:
-	#	GPIO.cleanup()
+		GPIO.cleanup()
 		print "\nDo widzenia..."
 		sys.exit()
 	
