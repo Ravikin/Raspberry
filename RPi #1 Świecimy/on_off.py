@@ -1,21 +1,21 @@
-#import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 import time
 import os
 import sys
 
 def init(PIN,BMODE):
-	#GPIO.setmode(GPIO.BMODE)
+	GPIO.setmode(GPIO.BMODE)
 	print 'GPIO.setmode(GPIO.{0})'.format(BMODE)
-	#GPIO.setup(PIN, GPIO.OUT)
+	GPIO.setup(PIN, GPIO.OUT)
 	print 'GPIO.setup({0},GPIO.OUT)'.format(PIN)
 
 def LED_ON(PIN):
-#	GPIO.output(PIN,GPIO.HIGH)
+	GPIO.output(PIN,GPIO.HIGH)
 	print "LED ON"
 	time.sleep(.05)
 
 def LED_OFF(PIN):
-#	GPIO.output(PIN,GPIO.HIGH)
+	GPIO.output(PIN,GPIO.HIGH)
 	print "LED OFF"
 	time.sleep(.05)
 
@@ -35,9 +35,9 @@ def main():
 				LED_OFF(PIN)
 			else:
 				break
-	#	GPIO.cleanup()
+		GPIO.cleanup()
 	except:
-	#	GPIO.cleanup()
+		GPIO.cleanup()
 	print "\nDo widzenia..."
 	sys.exit()
 if __name__ == '__main__':
