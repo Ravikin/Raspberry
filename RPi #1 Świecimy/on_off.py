@@ -1,3 +1,4 @@
+# Wlacza i wylacza LED na podanym przy starcie nr. GPIO. 'a' włącza | 'b' wyłącza
 import RPi.GPIO as GPIO
 import time
 import os
